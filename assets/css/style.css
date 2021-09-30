@@ -9,3 +9,8 @@ header {
 .form-control {
     border: 1px dashed rgb(0, 162, 255);
 }
+
+h3 {
+    font-size: 125%;
+    font-weight: bolder;
+}
