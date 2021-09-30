@@ -2,4 +2,10 @@ header {
     background: linear-gradient(to right, rgb(0, 162, 255), indigo);
     color: white;
     text-align: center;
+    border-radius: 5px;
+    margin: 0 10% 0 10%;
+}
+
+.form-control {
+    border: 1px dashed rgb(0, 162, 255);
 }
