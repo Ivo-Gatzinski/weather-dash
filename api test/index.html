@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetch Response Status</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="min-100-vh flex-column">
@@ -36,7 +44,12 @@
           <h2 class="text-white">Fetch Demo</h2>
         </header>
         <div class="text-center pt-4">
-          <button class="btn btn-danger" id="fetch-button">Click Me</button>
+            <input class="form-control" type="text" placeholder="Click Me First"/>
+          <button type="button" class="btn btn-primary search">
+            Search for City First
+          </button>
+          <hr>
+          <button class="btn btn-danger" id="fetch-button">Click Me Next</button>
         </div>
         <table class="card-body table mx-auto my-4">
           <th>
