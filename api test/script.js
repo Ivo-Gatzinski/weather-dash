@@ -58,37 +58,41 @@ function getOneApi(url) {
   getOneApi(oneCall + "?lat=" + lat + "&lon=" + lon +"&appid=" + apiKey);
 
   
-  var tableBody = document.getElementById("repo-table");
+var tableBody = document.getElementById("repo-table");
 var fetchButton = document.getElementById("fetch-button");
+var cityCall = "https://api.openweathermap.org/data/2.5/weather" + "?q=" + cityInput + "&appid=" + apiKey;
 
-function getApi() {
+function getCoord() {
   // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = "https://api.github.com/orgs/nodejs/repos";
-
-  fetch(requestUrl)
+  
+  fetch(cityCall)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      // Loop over the data to generate a table, each table row will have a link to the repo url
-      for (var i = 0; i < data.length; i++) {
-        // Creating elements, tablerow, tabledata, and anchor
-        var tableRow = document.createElement("tr");
-        var tableData = document.createElement("td");
-        var link = document.createElement("a");
+      
+      var lon = data.coord.lon;
 
-        // Setting the text of link and the href of the link
-        link.textContent = data[i].html_url;
-        link.href = data[i].html_url;
+      console.log(lon);
 
-        // Appending the link to the tabledata and then appending the tabledata to the tablerow
-        // The tablerow then gets appended to the tablebody
-        tableData.appendChild(link);
-        tableRow.appendChild(tableData);
-        tableBody.appendChild(tableRow);
-      }
+      var lat = data.coord.lat;
+
+      console.log(lat);
+
+      // Creating elements, tablerow, tabledata, and anchor
+      var tableRow = document.createElement("tr");
+      var tableData = document.createElement("td");
+      var para = document.createElement("p")
+      
+      //Appending data to table cells
+    para.innerHTML = cityInput + ": <hr> " + "lon: " + lon + ", " + "lat: " + lat + ".";
+
+      tableData.appendChild(para);
+      tableRow.appendChild(tableData);
+      tableBody.appendChild(tableRow);
+
     });
 }
 
-fetchButton.addEventListener("click", getApi);
+fetchButton.addEventListener("click", getCoord);
