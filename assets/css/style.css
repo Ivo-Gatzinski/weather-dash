@@ -1,6 +1,6 @@
 body {
 
-    background-color: rgba(0, 162, 255, 0.50);
+    /* background-color: rgba(0, 162, 255, 0.50); */
     font-family: 'Fira Sans', sans-serif;
 }
 
@@ -17,7 +17,7 @@ header {
 
 .form-control {
     border: 1px dashed rgb(0, 162, 255);
-    background-color:rgba(221, 176, 253, 0.705);
+    background-color:rgb(234, 209, 252);
     color: indigo;
 }
 
@@ -62,7 +62,7 @@ h4 {
 }
 
 .list-group-item {
-    background-color:rgba(173, 147, 192, 0.705);
+    background-color:rgb(234, 209, 252);
     color: indigo;
     font-size: 80%;
     padding-left: 20%;

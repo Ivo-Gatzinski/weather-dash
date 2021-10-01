@@ -10,7 +10,7 @@ $(".search-button").on("click", function (event) {
     console.log(name);
   });
 
-
+// USE DATA ATTRIBUTES for buttons
 
 // Get city input
 
