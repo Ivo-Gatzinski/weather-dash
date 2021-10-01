@@ -1,6 +1,7 @@
 body {
 
     background-color: rgba(0, 162, 255, 0.50);
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -16,6 +17,8 @@ header {
 
 .form-control {
     border: 1px dashed rgb(0, 162, 255);
+    background-color:rgba(221, 176, 253, 0.705);
+    color: indigo;
 }
 
 .search {
