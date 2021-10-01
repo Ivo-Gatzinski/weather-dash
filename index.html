@@ -1,35 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body style="font-family: monospace;"> 
-<header class="header">
-    <h1>Weather Dashboard</h1>
-</header>
-<main class="container">
-    <div class="row-12">
-    <section class="col-sm-4 p-2 search-form">
-        <h3>Search for a City:</h3>
-        <input class="form-control" type="text" placeholder="San Diego">
-        <br>
-        <button type="button" class="btn btn-primary btn-block">Search</button>
-    </section>
-    <section class="col-sm-4 p-2 history">
-        <button type="button" class="btn btn-secondary btn-block">Placeholder</button>
-    </section>
-    </div>
+  </head>
+  <body style="font-family: monospace">
+    <header class="header">
+      <h2>Weather Dashboard</h2>
+    </header>
+    <main class="container">
+      <div class="row">
+        <section class="col-sm-2 p-1 search-form">
+          <p class="search">Search for a City:</p>
+          <input class="form-control" type="text" placeholder="San Diego" />
+          <button type="button" class="btn btn-primary btn-block">
+            Search
+          </button>
+          <section class="col-sm p-2 history">
+            <button type="button" class="btn btn-secondary btn-block">
+              San Francisco
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              San Diego
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              Los Angeles
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              New York
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              Washington D.C.
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              Boston
+            </button>
+            <button type="button" class="btn btn-secondary btn-block">
+              Chicago
+            </button>
+          </section>
+        </section>
 
-</main>
-</body>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="assets/js/script.js"></script>
+        <div class="col">
+          <section
+            class="col-sm border border-primary rounded-lg mt-2 today-forecast"
+          >
+            <div class="row">
+              <div class="col-sm today">
+                <h3>San Diego (9/30/2021)</h3>
+                <ul>
+                  <li>DATA</li>
+                  <li>DATA</li>
+                  <li>DATA</li>
+                  <li>DATA</li>
+                  <li>DATA</li>
+                </ul>
+              </div>
+              
+            </div>
+          </section>
+          <h4>Five Day Forecast:</h4>
+          <section class="row-sm five-days">
+              <div class="card-columns">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">A fifth item</li>
+              </ul>
+            </div>
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">A fifth item</li>
+              </ul>
+            </div>
+            <div class="card" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">A fifth item</li>
+              </ul>
+            </div>
+            <div class="card" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">A fifth item</li>
+              </ul>
+            </div>
+            <div class="card" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">A fifth item</li>
+              </ul>
+            </div>
+            <div class="col-sm logo">
+                <a href="https://github.com/Ivo-Gatzinski/weather-dash"><i class="fa fa-github fa-10x" aria-hidden="true"></i>
+                </a></div></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script
+    src="https://kit.fontawesome.com/e8204e4956.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="assets/js/script.js"></script>
 </html>

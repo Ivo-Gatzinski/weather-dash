@@ -1,16 +1,65 @@
+body {
+
+    background-color: rgba(0, 162, 255, 0.50);
+}
+
+
 header {
-    background: linear-gradient(to right, rgb(0, 162, 255), indigo);
+    background: linear-gradient(to right, rgba(0, 162, 255), indigo);
     color: white;
     text-align: center;
     border-radius: 5px;
     margin: 0 10% 0 10%;
+    min-height: 38px;
+    font-size: 125%;
 }
 
 .form-control {
     border: 1px dashed rgb(0, 162, 255);
 }
 
-h3 {
-    font-size: 125%;
-    font-weight: bolder;
+.search {
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.history {
+
+    border-top: 1px dashed blue;
+}
+
+.btn-primary {
+
+margin-bottom: 8px;
+margin-top: 16px;
+}
+
+.today-forecast {
+
+    background-color: rgba(0, 133, 255, 0.20);
+    padding-left: 5%;
+
+}
+
+.logo {
+    text-align: center;
+    margin-top: 8%;
+}
+
+.five-days {
+margin-top: 8%;
+}
+
+h4 {
+    margin-left: 5%;
+    padding-top: 1%;
+    margin-bottom: -5%;
+}
+
+.list-group-item {
+    background-color:rgba(173, 147, 192, 0.705);
+    color: indigo;
+    font-size: 80%;
+    padding-left: 20%;
 }
