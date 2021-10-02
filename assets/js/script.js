@@ -120,12 +120,13 @@ form.on("submit", handleFormSubmit);
 
 // search from history button:
 
-function historyClick() {
-  searchWeather(this.textContent);
-  console.log(this.textContent);
-}
+var historyButton = $(".history-button");
 
-historyButton.on("click", historyClick);
+historyButton.on("click", ".history-button", function () {
+    query = this.textContent;
+    searchWeather(query);
+  console.log(query);
+});
 
 
 // //search and display functions:
