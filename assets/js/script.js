@@ -37,11 +37,15 @@ function handleFormSubmit(event) {
   event.preventDefault();
   query = searchInput.val().trim();
   if (query) {
+      //call search Weather API function:
     searchWeather(query);
+    // add city to search history
     addSearchToHistory(query);
+    // clear the form
     searchInput.val("");
   }
 }
+
 
 // display history buttons 
 
@@ -69,15 +73,15 @@ function displayButtons() {
       displayButtons();
     }
 
-    // URL for first API call:
-
-url = cityCall + "?q=" + query + "&appid=" + apiKey;
-
 // search weather APi function
 
-function searchWeather(url) {
+function searchWeather(query) {
+
+    // URL for first API call:
     
-    fetch(url)
+    cityUrl = cityCall + "?q=" + query + "&appid=" + apiKey;
+
+    fetch(cityUrl)
     .then(function (response) {
       console.log(response);
       // display the status
@@ -96,9 +100,6 @@ function searchWeather(url) {
     });
 };
 
-//call search Weather API function:
-
-searchWeather();
 
 //submit city form
 
