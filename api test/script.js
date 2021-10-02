@@ -55,7 +55,7 @@ function getOneApi(url) {
       });
   }
   
-  getOneApi(oneCall + "?lat=" + lat + "&lon=" + lon +"&appid=" + apiKey);
+  getOneApi(oneCall + "?lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=" + apiKey);
 
   
 var tableBody = document.getElementById("repo-table");

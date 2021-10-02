@@ -10,9 +10,19 @@ var fiveDays = $(".five-days");
 searchHistory = localStorage.getItem("search-history");
 if (searchHistory) {
   searchHistory = JSON.parse(searchHistory);
+  displayButtons();
 } else {
   searchHistory = [];
 }
+
+//clear history button
+
+$(".clear-history").on("click", function() {
+
+    searchHistory = [];
+    displayButtons();
+
+});
 
 // get city search
 
@@ -26,19 +36,15 @@ function handleFormSubmit(event) {
   }
 }
 
-//submit city form
-
-form.on("submit", handleFormSubmit);
-
 // display history buttons 
 
 function displayButtons() {
     historySearch.empty();
     // loop over searchHistory
-    for (var i = searchHistory.length - 1; i >= 0; i--) {
+    for (i = searchHistory.length - 1; i >= 0; i--) {
       //create button element to add
-        var addButton = $(".historySearch")
-        .children.attr({
+        var addButton = $(".buttons").add("<button>")
+        .attr({
           type: "button",
           class: "btn btn-outline-success btn-block",
         })
@@ -48,17 +54,19 @@ function displayButtons() {
     }
   }
   
-  // add city to search history in local storage
+  // add city to search history in local storage and display button
   
   function addSearchToHistory(query) {
-      searchHistory.push(query);
+    searchHistory.push(query);
       localStorage.setItem("search-history", JSON.stringify(searchHistory));
       displayButtons();
     }
 
-// // submit city from history
+//submit city form
 
-// historySearch.on("click", ".search-button", handleSearchClick);
+form.on("submit", handleFormSubmit);
+
+
 
 // //pass to search API
 
@@ -105,15 +113,15 @@ function displayButtons() {
 
 
 
-// USE DATA ATTRIBUTES for buttons
+// USE DATA ATTRIBUTES for ITEMS
 
 // Get city input
 
-// document.querySelector("input").value();
 
-// store input in local storage
 // attachh city input to first api call
+
 // get lon and lat from first api call
+
 // attach lon and lat to second api call
 //
 
@@ -127,18 +135,3 @@ function displayButtons() {
 // Part B:
 
 // Search for a city and display forecast
-
-// add parameter for IMPERIAL units
-
-// Part C:
-// let array for searchHistory
-//
-// read array from end of array
-//
-// create and append element
-//
-// this sorts buttons from recent
-//
-// save items to end of array in localStorage
-//
-// bonus: clear history button
