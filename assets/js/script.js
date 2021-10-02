@@ -9,6 +9,10 @@ var form = $(".search-form");
 var searchInput = $(".form-control");
 
 var historySearch = $(".historySearch");
+var historyButton = $(".history-button");
+
+var lat = "";
+var lon = "";
 
 var todayForecast = $(".today-forecast");
 var fiveDays = $(".five-days");
@@ -58,7 +62,7 @@ function displayButtons() {
         var addButton = $(".buttons").add("<button>")
         .attr({
           type: "button",
-          class: "btn btn-outline-success btn-block",
+          class: "btn btn-outline-success btn-block history-button",
         })
         .text(searchHistory[i]);
         // append button element
@@ -98,7 +102,13 @@ function searchWeather(query) {
     })
     .then(function (data) {
       console.log(data);
+// get lat and lon from data:
+        lat = data.coord.lat;
+        lon = data.coord.lon;
+        console.log(lat);
+        console.log(lon);
     });
+    
 };
 
 
@@ -108,11 +118,15 @@ form.on("submit", handleFormSubmit);
 
 
 
-// //pass to search API
+// search from history button:
 
-// function handleSearchClick() {
-//   searchApi(this.textContent);
-// }
+function historyClick() {
+  searchWeather(this.textContent);
+  console.log(this.textContent);
+}
+
+historyButton.on("click", historyClick);
+
 
 // //search and display functions:
 
