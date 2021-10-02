@@ -9,7 +9,7 @@ var form = $(".search-form");
 var searchInput = $(".form-control");
 
 var historySearch = $(".historySearch");
-var historyButton = $(".history-button");
+var buttons = $(".buttons");
 
 var lat = "";
 var lon = "";
@@ -120,10 +120,8 @@ form.on("submit", handleFormSubmit);
 
 // search from history button:
 
-var historyButton = $(".history-button");
-
-historyButton.on("click", ".history-button", function () {
-    query = this.textContent;
+buttons.on("click", ".history-button", function () {
+    query = $(".history-button").val();
     searchWeather(query);
   console.log(query);
 });
