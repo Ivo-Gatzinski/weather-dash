@@ -1,8 +1,15 @@
+var cityCall = "https://api.openweathermap.org/data/2.5/weather";
+
 var apiKey = "112bf445259e35c8b97e82d67527af29";
+
+var responseText = document.getElementById('response-text');
+
 var searchHistory = [];
 var form = $(".search-form");
 var searchInput = $(".form-control");
+
 var historySearch = $(".historySearch");
+
 var todayForecast = $(".today-forecast");
 var fiveDays = $(".five-days");
 
@@ -28,9 +35,9 @@ $(".clear-history").on("click", function() {
 
 function handleFormSubmit(event) {
   event.preventDefault();
-  var query = searchInput.val().trim();
+  query = searchInput.val().trim();
   if (query) {
-    // searchWeather(query);
+    searchWeather(query);
     addSearchToHistory(query);
     searchInput.val("");
   }
@@ -62,7 +69,32 @@ function displayButtons() {
       displayButtons();
     }
 
-//submit city form
+url = cityCall + "?q=" + query + "&appid=" + apiKey;
+
+function searchWeather(url) {
+    
+    fetch(url)
+    .then(function (response) {
+      console.log(response);
+      // display the status
+
+      responseText.textContent = response.status;
+      // check the response status for success
+      if (response.status === 200) {
+        responseText.style.color = 'green';
+      } else {
+        responseText.style.color = 'red';
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+};
+
+searchWeather();
+
+    //submit city form
 
 form.on("submit", handleFormSubmit);
 
