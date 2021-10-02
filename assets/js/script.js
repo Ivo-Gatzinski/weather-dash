@@ -69,7 +69,11 @@ function displayButtons() {
       displayButtons();
     }
 
+    // URL for first API call:
+
 url = cityCall + "?q=" + query + "&appid=" + apiKey;
+
+// search weather APi function
 
 function searchWeather(url) {
     
@@ -92,9 +96,11 @@ function searchWeather(url) {
     });
 };
 
+//call search Weather API function:
+
 searchWeather();
 
-    //submit city form
+//submit city form
 
 form.on("submit", handleFormSubmit);
 
