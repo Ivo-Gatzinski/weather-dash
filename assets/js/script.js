@@ -48,6 +48,8 @@ function handleFormSubmit(event) {
     addSearchToHistory(query);
     // clear the form
     searchInput.val("");
+    // reload the page
+    location.reload();
   }
 }
 
@@ -94,11 +96,14 @@ function searchWeather(query) {
       if (response.status === 200) {
         responseText.style.color = 'green';
         responseText.textContent = "Connection status: OK";
+      } else if (response.status === 404) {
+        responseText.style.color = 'red';
+        responseText.textContent = "Connection status: City Not Found";
       } else {
         responseText.style.color = 'red';
         responseText.textContent = "Connection status: Server Down";
-      }
-      return response.json();
+      }     
+    return response.json();
     })
     .then(function (data) {
       console.log(data);
@@ -120,10 +125,10 @@ form.on("submit", handleFormSubmit);
 
 // search from history button:
 
-buttons.on("click", ".history-button", function () {
-    query = $(".history-button").val();
+$(".history-button").on("click", function () {
+    query = this.textContent;
     searchWeather(query);
-  console.log(query);
+    console.log(query);
 });
 
 
