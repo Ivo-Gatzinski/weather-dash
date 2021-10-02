@@ -26,6 +26,7 @@ if (searchHistory) {
 
 $(".clear-history").on("click", function() {
 
+    localStorage.clear();
     searchHistory = [];
     displayButtons();
 
@@ -83,15 +84,15 @@ function searchWeather(query) {
 
     fetch(cityUrl)
     .then(function (response) {
-      console.log(response);
-      // display the status
-
-      responseText.textContent = response.status;
+      
       // check the response status for success
+      // display the status
       if (response.status === 200) {
         responseText.style.color = 'green';
+        responseText.textContent = "Connection status: OK";
       } else {
         responseText.style.color = 'red';
+        responseText.textContent = "Connection status: Server Down";
       }
       return response.json();
     })
