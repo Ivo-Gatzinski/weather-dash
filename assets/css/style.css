@@ -59,8 +59,8 @@ justify-content: center;
 
 h4 {
     margin-left: 5%;
-    padding-top: 1%;
-    margin-bottom: -5%;
+    padding-top: 2%;
+    margin-bottom: -6%;
 }
 
 .list-group-item, .card {
@@ -97,6 +97,7 @@ font-size: 150%;
 
 .weather-icon {
     margin-top: -8px;
+    text-align: center;
 
 }
 

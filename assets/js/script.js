@@ -270,9 +270,27 @@ function displayFiveDays(data) {
 
  // 3   
     
-    icon3
-    icon4
-    icon5
+ iconcode3 = data.daily[3].weather[0].icon;
+
+ iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png";
+
+ icon3 = $("#icon3").attr("src", iconurl3);
+
+ // 4
+ 
+ iconcode4 = data.daily[4].weather[0].icon;
+
+ iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png";
+
+ icon4 = $("#icon4").attr("src", iconurl4);
+
+ // 5
+ 
+ iconcode5 = data.daily[5].weather[0].icon;
+
+ iconurl5 = "http://openweathermap.org/img/w/" + iconcode5 + ".png";
+
+ icon5 = $("#icon5").attr("src", iconurl5);
 
 // create attributes html for data:
 // append data to html:
