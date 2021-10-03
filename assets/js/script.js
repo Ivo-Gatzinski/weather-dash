@@ -177,7 +177,7 @@ function displayCurrent(data) {
     
     icon = $("#icon").attr("src", iconurl)
     
-    $(".cityHeader").text(query + ": ");
+    $(".cityHeader").text(query);
     
     //temp data
 
