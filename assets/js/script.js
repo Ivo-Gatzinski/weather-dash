@@ -1,5 +1,7 @@
 var cityCall = "https://api.openweathermap.org/data/2.5/weather";
 
+var weatherCall = "https://api.openweathermap.org/data/2.5/onecall";
+
 var apiKey = "112bf445259e35c8b97e82d67527af29";
 
 var responseText = document.getElementById('response-text');
@@ -43,7 +45,7 @@ function handleFormSubmit(event) {
   query = searchInput.val().trim();
   if (query) {
       //call search Weather API function:
-    searchWeather(query);
+    searchCity(query);
     // add city to search history
     addSearchToHistory(query);
     // clear the form
@@ -68,7 +70,15 @@ function displayButtons() {
         .text(searchHistory[i]);
         // append button element
       historySearch.append(addButton);
+      
     }
+    // search from history button:
+
+$(".history-button").on("click", function () {
+
+    query = this.textContent;
+    searchCity(query);
+});
   }
   
   // add city to search history in local storage and display button
@@ -77,11 +87,12 @@ function displayButtons() {
     searchHistory.push(query);
       localStorage.setItem("search-history", JSON.stringify(searchHistory));
       displayButtons();
+      
     }
 
 // search weather APi function
 
-function searchWeather(query) {
+function searchCity(query) {
 
     // URL for first API call:
     
@@ -105,12 +116,12 @@ function searchWeather(query) {
     return response.json();
     })
     .then(function (data) {
-      console.log(data);
 // get lat and lon from data:
         lat = data.coord.lat;
         lon = data.coord.lon;
         console.log(lat);
         console.log(lon);
+        getWeather(lat, lon);
     });
     
 };
@@ -120,39 +131,25 @@ function searchWeather(query) {
 
 form.on("submit", handleFormSubmit);
 
+// search by lat lon function:
 
+function getWeather(lat, lon) {
+  weatherUrl = weatherCall + "?lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=" + apiKey;
+  
+  fetch(weatherUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        // DISPLAY DATA IN RIGHT CLASSES IN HTML:
 
-// search from history button:
+    //   for (var i = 0; i < data.data.length; i++) {
+    //     displayCurrent(data.data[i]);
+    //   }
 
-$(".history-button").on("click", function () {
-
-    query = this.textContent;
-    searchWeather(query);
-    console.log(query);
-});
-
-
-// //search and display functions:
-
-// function searchApi(query) {
-//   var requestUrl =
-//     "hhttps://api.openweathermap.org/data/2.5/onecall" +
-//     "&q=" +
-//     query +
-//     "&units=Imperial" +
-//     "&appid=" +
-//     apiKey;
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       resultsContainer.empty();
-//       for (var i = 0; i < data.data.length; i++) {
-//         displayCurrent(data.data[i]);
-//       }
-//     });
-// }
+    });
+}
 
 // function displayCurrent(giphyResult) {
 //   var imgUrl = giphyResult.images.downsized_large.url;
