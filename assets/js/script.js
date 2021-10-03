@@ -90,7 +90,7 @@ $(".history-button").on("click", function () {
       
     }
 
-// search weather APi function
+// search for city in weather APi function
 
 function searchCity(query) {
 
@@ -116,20 +116,16 @@ function searchCity(query) {
     return response.json();
     })
     .then(function (data) {
+
 // get lat and lon from data:
         lat = data.coord.lat;
         lon = data.coord.lon;
-        console.log(lat);
-        console.log(lon);
+
+//plug in lat lon into one call api:
         getWeather(lat, lon);
     });
     
 };
-
-
-//submit city form
-
-form.on("submit", handleFormSubmit);
 
 // search by lat lon function:
 
@@ -149,44 +145,44 @@ function getWeather(lat, lon) {
     //   }
 
     });
+
+    return(data);
 }
-
-// function displayCurrent(giphyResult) {
-//   var imgUrl = giphyResult.images.downsized_large.url;
-//   var title = giphyResult.title;
-
-//   var img = $("<img>").attr({
-//     src: imgUrl,
-//     class: "img-fluid",
-//     alt: title,
-//   });
-//   var col = $("<div>").addClass("col-12 col-lg-6 pb-4").append(img);
-
-//   fiveDays.append(col);
-// }
-
-
 
 
 // USE DATA ATTRIBUTES for ITEMS
 
-// Get city input
-
-
-// attachh city input to first api call
-
-// get lon and lat from first api call
-
-// attach lon and lat to second api call
-//
-
-// Part A:
-// DISPLAY ONE CITY FORECAST
-
-// THINK OF THE CONCEPTUAL FUNCTIONALITY
-
 // Look at TODOS exercisee
 
-// Part B:
 
-// Search for a city and display forecast
+function displayCurrent(data) {
+
+  // set up variables for selectors:
+
+
+  // create attributes html for data:
+  var img = $("<img>").attr({
+    src: imgUrl,
+    class: "img-fluid",
+    alt: title,
+  });
+  var col = $("<div>").addClass("col-12 col-lg-6 pb-4").append(img);
+
+  // append data to html
+
+  currentDay.append(col);
+}
+
+function displayFiveDays (data) {
+
+    // set up variables for selectors:
+
+    // create attributes html for data:
+
+    // append data to html:
+
+}
+
+//submit city form
+
+form.on("submit", handleFormSubmit);
