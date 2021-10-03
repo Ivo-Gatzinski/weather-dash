@@ -149,8 +149,8 @@ function getWeather(lat, lon) {
     .then(function (data) {
       console.log(data);
 
-      // displayCurrent();
-      // displayFiveDays();
+      displayCurrent(data);
+      displayFiveDays(data);
     });
 }
 
@@ -160,18 +160,14 @@ function getWeather(lat, lon) {
 
 function displayCurrent(data) {
   // set up variables for selectors:
+var cityHeader = $(".cityHeader").val();
+console.log(cityHeader);
 
   // create attributes html for data:
-  var img = $("<img>").attr({
-    src: imgUrl,
-    class: "img-fluid",
-    alt: title,
-  });
-  var col = $("<div>").addClass("col-12 col-lg-6 pb-4").append(img);
 
   // append data to html
 
-  currentDay.append(col);
+//   currentDay.append(col);
 }
 
 function displayFiveDays(data) {
