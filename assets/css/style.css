@@ -68,9 +68,11 @@ h4 {
     color: indigo;
     font-size: 100%;
     border: 1px dashed green;
+    margin: none;
+    padding: none;
 }
 
-li {
+.today li {
     margin-left: 5%;
     list-style: none;
     border-bottom: 1px dashed black;
@@ -115,3 +117,6 @@ footer {
     font-size: 120%;
 }
 
+.date1, .date2, .date3, .date4, .date5 {
+    font-size: 115%;
+}

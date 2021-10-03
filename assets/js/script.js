@@ -311,13 +311,39 @@ function displayFiveDays(data) {
  temp4 = data.daily[4].temp.day;
  temp5 = data.daily[5].temp.day;
 
- $(".temp1").text(temp1 + "℉");
- $(".temp2").text(temp2 + "℉");
- $(".temp3").text(temp3 + "℉");
- $(".temp4").text(temp4 + "℉");
- $(".temp5").text(temp5 + "℉");
+ $(".temp1").text("Temp: " + temp1 + "℉");
+ $(".temp2").text("Temp: " + temp2 + "℉");
+ $(".temp3").text("Temp: " + temp3 + "℉");
+ $(".temp4").text("Temp: " + temp4 + "℉");
+ $(".temp5").text("Temp: " + temp5 + "℉");
 
 // wind
+
+wind1 = data.daily[1].wind_speed;
+wind2 = data.daily[2].wind_speed;
+wind3 = data.daily[3].wind_speed;
+wind4 = data.daily[4].wind_speed;
+wind5 = data.daily[5].wind_speed;
+
+$(".wind1").text("Wind: " + wind1 + " MPH");
+$(".wind2").text("Wind: " + wind2 + " MPH");
+$(".wind3").text("Wind: " + wind3 + " MPH");
+$(".wind4").text("Wind: " + wind4 + " MPH");
+$(".wind5").text("Wind: " + wind5 + " MPH");
+
+// humidity
+
+humid1 = data.daily[1].humidity;
+humid2 = data.daily[2].humidity;
+humid3 = data.daily[3].humidity;
+humid4 = data.daily[4].humidity;
+humid5 = data.daily[5].humidity;
+
+$(".humid1").text("Humidity: " + humid1 + " %");
+$(".humid2").text("Humidity: " + humid2 + " %");
+$(".humid3").text("Humidity: " + humid3 + " %");
+$(".humid4").text("Humidity: " + humid4 + " %");
+$(".humid5").text("Humidity: " + humid5 + " %");
 
 }
 
