@@ -108,6 +108,17 @@ function searchCity(query) {
       return response.json();
     })
     .then(function (data) {
+
+        console.log(data);
+
+        // get icon code
+
+        iconcode = data.weather[0].icon;
+        
+        // get icon image
+
+        iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
       // get lat and lon from data:
       lat = data.coord.lat;
       lon = data.coord.lon;
@@ -165,6 +176,7 @@ function displayCurrent(data) {
     // set up variables for selectors + replace text
 
 // header of city searched:
+    icon = $("#icon").attr("src", iconurl)
     $(".cityHeader").text(query + ": " + moment().format("L"));
 
 

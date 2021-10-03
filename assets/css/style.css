@@ -40,7 +40,7 @@ margin-top: 16px;
 
 .today-forecast {
 
-    background-color: rgba(0, 129, 250, 0.25);
+    background-color: rgb(148, 203, 255);
     padding-left: 5%;
     padding-top: 1%;
 
@@ -88,5 +88,10 @@ li {
 
 font-weight: bolder;
 font-size: 150%;
-border-bottom: 1px dashed rgba(0, 162, 255);
 }
+
+.weather-icon {
+    margin-top: -8px;
+    
+}
+
