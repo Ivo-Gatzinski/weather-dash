@@ -109,8 +109,6 @@ function searchCity(query) {
     })
     .then(function (data) {
 
-        console.log(data);
-
         // get icon code
 
         iconcode = data.weather[0].icon;
@@ -160,6 +158,8 @@ function getWeather(lat, lon) {
     .then(function (data) {
       console.log(data);
 
+      currentDate = moment.unix(data.current.dt).format("LLLL");
+
       displayCurrent(data);
     //   displayFiveDays(data);
     });
@@ -177,8 +177,11 @@ function displayCurrent(data) {
     
     // header of city searched:
     
+    date = $(".current-date").text(currentDate);
+    
     icon = $("#icon").attr("src", iconurl)
-    $(".cityHeader").text(query + ": " + moment().format("L"));
+    
+    $(".cityHeader").text(query + ": ");
     
     //temp data
 
