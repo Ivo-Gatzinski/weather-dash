@@ -157,7 +157,7 @@ function getWeather(lat, lon) {
     })
     .then(function (data) {
 
-      currentDate = moment.unix(data.current.dt).format("LLLL");
+      currentDate = moment.unix(data.current.dt).format("dddd, MMMM Do, YYYY");
 
       displayCurrent(data);
       displayFiveDays(data);
