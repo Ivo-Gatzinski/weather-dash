@@ -156,7 +156,6 @@ function getWeather(lat, lon) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       currentDate = moment.unix(data.current.dt).format("LLLL");
 
@@ -165,9 +164,6 @@ function getWeather(lat, lon) {
     });
 }
 
-// USE DATA ATTRIBUTES for ITEMS
-
-// Look at TODOS exercisee
 
 function displayCurrent(data) {
 
@@ -237,11 +233,6 @@ function displayCurrent(data) {
 }
 
 function displayFiveDays(data) {
-
-
-// set up variables for selectors:
-// create attributes html for data:
-// append data to html:
 
 // date:
 
