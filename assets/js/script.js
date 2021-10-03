@@ -209,46 +209,73 @@ function displayCurrent(data) {
         uviNumber.css("color", "white");
         uviNumber.css("padding", "0px 5px 0px 5px");
         uviNumber.css("border-radius", "5px");
-    } else if (data.current.uvi == 4 || data.current.uvi == 5) {
+    }
+    if (data.current.uvi >= 3 && data.current.uvi <= 5.99) {
         uviNumber.css("background-color", "yellow");
-        uviNumber.css("color", "white");
+        uviNumber.css("color", "black");
         uviNumber.css("padding", "0px 5px 0px 5px");
         uviNumber.css("border-radius", "5px");
-    } else if (data.current.uvi == 6 || data.current.uvi == 7) {
+    }
+    if (data.current.uvi >= 6 && data.current.uvi <= 7.99) {
         uviNumber.css("background-color", "orange");
         uviNumber.css("color", "white");
         uviNumber.css("padding", "0px 5px 0px 5px");
         uviNumber.css("border-radius", "5px");
-    } else if (data.current.uvi == 8 || data.current.uvi == 9 || data.current.uvi == 10) {
+    } 
+    if (data.current.uvi >= 8 && data.current.uvi <= 10.99) {
         uviNumber.css("background-color", "red");
         uviNumber.css("color", "white");
         uviNumber.css("padding", "0px 5px 0px 5px");
         uviNumber.css("border-radius", "5px");
-    } else { 
+    }
+    if (data.current.uvi >= 11) {
         uviNumber.css("background-color", "purple");
         uviNumber.css("color", "white");
         uviNumber.css("padding", "0px 5px 0px 5px");
         uviNumber.css("border-radius", "5px");
-
+    }
 }
-}
-
 
 function displayFiveDays(data) {
 
-date1 = data.current.daily[1].dt;
 
-    daily1 = moment.unix(data.current.daily[1].dt).format("L");
-    daily2 = moment.unix(data.current.daily[2].dt).format("L");
-    daily3 = moment.unix(data.current.daily[3].dt).format("L");
-    daily4 = moment.unix(data.current.daily[4].dt).format("L");
-    daily5 = moment.unix(data.current.daily[5].dt).format("L");
+// set up variables for selectors:
 
-    console.log(date1);
 
-//   // set up variables for selectors:
-//   // create attributes html for data:
-//   // append data to html:
+    date1 = moment.unix(data.daily[1].dt).format("L");
+    date2 = moment.unix(data.daily[2].dt).format("L");
+    date3 = moment.unix(data.daily[3].dt).format("L");
+    date4 = moment.unix(data.daily[4].dt).format("L");
+    date5 = moment.unix(data.daily[5].dt).format("L");
+
+    // get icon code
+
+// 1
+    iconcode1 = data.daily[1].weather[0].icon;
+        
+    // get icon image
+
+    iconurl1 = "http://openweathermap.org/img/w/" + iconcode1 + ".png";
+
+    // append icon image
+
+    icon1 = $("#icon1").attr("src", iconurl1);
+// 2  
+
+    iconcode2 = data.daily[2].weather[0].icon;
+
+    iconurl2 = "http://openweathermap.org/img/w/" + iconcode2 + ".png";
+
+    icon2 = $("#icon2").attr("src", iconurl2);
+
+ // 3   
+    
+    icon3
+    icon4
+    icon5
+
+// create attributes html for data:
+// append data to html:
 }
 
 //submit city form

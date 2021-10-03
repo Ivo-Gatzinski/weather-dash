@@ -52,7 +52,9 @@ margin-top: 16px;
 }
 
 .five-days {
-margin-top: 8%;
+margin: 8% 2% 2% 2%;
+justify-content: center;
+
 }
 
 h4 {
@@ -64,7 +66,7 @@ h4 {
 .list-group-item, .card {
     /* background-color:rgb(234, 209, 252); */
     color: indigo;
-    font-size: 80%;
+    font-size: 100%;
     border: 1px dashed green;
 }
 
