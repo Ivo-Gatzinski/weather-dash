@@ -108,6 +108,11 @@ font-size: 150%;
     width: 100px;
 }
 
+#icon1, #icon2, #icon3, #icon4, #icon5 {
+    max-height: 50px;
+    max-width: 50px;
+}
+
 footer {
     text-align: right;
     margin-right: 10%;
