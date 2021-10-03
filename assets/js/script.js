@@ -240,13 +240,24 @@ function displayFiveDays(data) {
 
 
 // set up variables for selectors:
+// create attributes html for data:
+// append data to html:
 
+// date:
 
     date1 = moment.unix(data.daily[1].dt).format("L");
     date2 = moment.unix(data.daily[2].dt).format("L");
     date3 = moment.unix(data.daily[3].dt).format("L");
     date4 = moment.unix(data.daily[4].dt).format("L");
     date5 = moment.unix(data.daily[5].dt).format("L");
+
+    $(".date1").text(date1);
+    $(".date2").text(date2);
+    $(".date3").text(date3);
+    $(".date4").text(date4);
+    $(".date5").text(date5);
+
+// icons:
 
     // get icon code
 
@@ -292,8 +303,22 @@ function displayFiveDays(data) {
 
  icon5 = $("#icon5").attr("src", iconurl5);
 
-// create attributes html for data:
-// append data to html:
+ // temp
+
+ temp1 = data.daily[1].temp.day;
+ temp2 = data.daily[2].temp.day;
+ temp3 = data.daily[3].temp.day;
+ temp4 = data.daily[4].temp.day;
+ temp5 = data.daily[5].temp.day;
+
+ $(".temp1").text(temp1 + "℉");
+ $(".temp2").text(temp2 + "℉");
+ $(".temp3").text(temp3 + "℉");
+ $(".temp4").text(temp4 + "℉");
+ $(".temp5").text(temp5 + "℉");
+
+// wind
+
 }
 
 //submit city form
