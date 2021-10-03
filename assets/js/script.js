@@ -159,15 +159,15 @@ function getWeather(lat, lon) {
 // Look at TODOS exercisee
 
 function displayCurrent(data) {
-  // set up variables for selectors:
-var cityHeader = $(".cityHeader").val();
-console.log(cityHeader);
 
-  // create attributes html for data:
+    // create attributes html for data:
+    // append data to html
+    // set up variables for selectors + replace text
 
-  // append data to html
+// header of city searched:
+    $(".cityHeader").text(query + ": " + moment().format("L"));
 
-//   currentDay.append(col);
+
 }
 
 function displayFiveDays(data) {

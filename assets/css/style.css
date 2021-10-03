@@ -83,3 +83,10 @@ li {
     text-align: center;
     padding-top: 10%;
 }
+
+.cityHeader {
+
+font-weight: bolder;
+font-size: 150%;
+border-bottom: 1px dashed rgba(0, 162, 255);
+}
