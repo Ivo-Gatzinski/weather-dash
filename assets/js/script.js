@@ -189,7 +189,7 @@ function displayCurrent(data) {
 
     //wind data
 
-    $(".wind").text("Wind: " + data.current.wind_speed + " MPH");
+    $(".wind").text("Wind: " + data.current.wind_speed + " mph");
 
     // humidity data
 
@@ -325,11 +325,11 @@ wind3 = data.daily[3].wind_speed;
 wind4 = data.daily[4].wind_speed;
 wind5 = data.daily[5].wind_speed;
 
-$(".wind1").text("Wind: " + wind1 + " MPH");
-$(".wind2").text("Wind: " + wind2 + " MPH");
-$(".wind3").text("Wind: " + wind3 + " MPH");
-$(".wind4").text("Wind: " + wind4 + " MPH");
-$(".wind5").text("Wind: " + wind5 + " MPH");
+$(".wind1").text("Wind: " + wind1 + " mph");
+$(".wind2").text("Wind: " + wind2 + " mph");
+$(".wind3").text("Wind: " + wind3 + " mph");
+$(".wind4").text("Wind: " + wind4 + " mph");
+$(".wind5").text("Wind: " + wind5 + " mph");
 
 // humidity
 
