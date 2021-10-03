@@ -48,8 +48,7 @@ function handleFormSubmit(event) {
     addSearchToHistory(query);
     // clear the form
     searchInput.val("");
-    // reload the page
-    location.reload();
+    
   }
 }
 
@@ -126,6 +125,7 @@ form.on("submit", handleFormSubmit);
 // search from history button:
 
 $(".history-button").on("click", function () {
+
     query = this.textContent;
     searchWeather(query);
     console.log(query);
