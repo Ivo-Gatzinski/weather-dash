@@ -229,6 +229,8 @@ function displayCurrent(data) {
 
 }
 }
+
+
 // function displayFiveDays(data) {
 //   // set up variables for selectors:
 //   // create attributes html for data:
