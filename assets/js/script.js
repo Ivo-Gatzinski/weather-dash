@@ -161,7 +161,7 @@ function getWeather(lat, lon) {
       currentDate = moment.unix(data.current.dt).format("LLLL");
 
       displayCurrent(data);
-    //   displayFiveDays(data);
+      displayFiveDays(data);
     });
 }
 
@@ -234,11 +234,22 @@ function displayCurrent(data) {
 }
 
 
-// function displayFiveDays(data) {
+function displayFiveDays(data) {
+
+date1 = data.current.daily[1].dt;
+
+    daily1 = moment.unix(data.current.daily[1].dt).format("L");
+    daily2 = moment.unix(data.current.daily[2].dt).format("L");
+    daily3 = moment.unix(data.current.daily[3].dt).format("L");
+    daily4 = moment.unix(data.current.daily[4].dt).format("L");
+    daily5 = moment.unix(data.current.daily[5].dt).format("L");
+
+    console.log(date1);
+
 //   // set up variables for selectors:
 //   // create attributes html for data:
 //   // append data to html:
-// }
+}
 
 //submit city form
 
