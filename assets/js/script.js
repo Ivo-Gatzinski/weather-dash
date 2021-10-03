@@ -161,7 +161,7 @@ function getWeather(lat, lon) {
       console.log(data);
 
       displayCurrent(data);
-      displayFiveDays(data);
+    //   displayFiveDays(data);
     });
 }
 
@@ -174,19 +174,66 @@ function displayCurrent(data) {
     // create attributes html for data:
     // append data to html
     // set up variables for selectors + replace text
-
-// header of city searched:
+    
+    // header of city searched:
+    
     icon = $("#icon").attr("src", iconurl)
     $(".cityHeader").text(query + ": " + moment().format("L"));
+    
+    //temp data
 
+    $(".temp").text("Temp: " + data.current.temp + "℉");
+
+    //wind data
+
+    $(".wind").text("Wind: " + data.current.wind_speed + " MPH");
+
+    // humidity data
+
+    $(".humid").text("Humidity: " + data.current.humidity + " %");
+
+    // uvi index
+    var uvi = $(".uvi");
+
+    var uviNumber = $(".uvi-number");
+
+    uviNumber.text(data.current.uvi);
+
+    uvi.text("UV Index: ");
+
+    if (data.current.uvi < 3) {
+        uviNumber.css("background-color", "green");
+        uviNumber.css("color", "white");
+        uviNumber.css("padding", "0px 5px 0px 5px");
+        uviNumber.css("border-radius", "5px");
+    } else if (data.current.uvi == 4 || data.current.uvi == 5) {
+        uviNumber.css("background-color", "yellow");
+        uviNumber.css("color", "white");
+        uviNumber.css("padding", "0px 5px 0px 5px");
+        uviNumber.css("border-radius", "5px");
+    } else if (data.current.uvi == 6 || data.current.uvi == 7) {
+        uviNumber.css("background-color", "orange");
+        uviNumber.css("color", "white");
+        uviNumber.css("padding", "0px 5px 0px 5px");
+        uviNumber.css("border-radius", "5px");
+    } else if (data.current.uvi == 8 || data.current.uvi == 9 || data.current.uvi == 10) {
+        uviNumber.css("background-color", "red");
+        uviNumber.css("color", "white");
+        uviNumber.css("padding", "0px 5px 0px 5px");
+        uviNumber.css("border-radius", "5px");
+    } else { 
+        uviNumber.css("background-color", "purple");
+        uviNumber.css("color", "white");
+        uviNumber.css("padding", "0px 5px 0px 5px");
+        uviNumber.css("border-radius", "5px");
 
 }
-
-function displayFiveDays(data) {
-  // set up variables for selectors:
-  // create attributes html for data:
-  // append data to html:
 }
+// function displayFiveDays(data) {
+//   // set up variables for selectors:
+//   // create attributes html for data:
+//   // append data to html:
+// }
 
 //submit city form
 

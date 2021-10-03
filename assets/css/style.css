@@ -69,8 +69,11 @@ h4 {
 }
 
 li {
-    margin-left: 10%;
+    margin-left: 5%;
     list-style: none;
+    border-bottom: 1px dashed black;
+    padding: 2%;
+    font-size: 125%;
 }
 
 .clear-history {
@@ -92,6 +95,16 @@ font-size: 150%;
 
 .weather-icon {
     margin-top: -8px;
-    
+
+}
+
+#icon {
+    height: 65px;
+    width: 65px;
+}
+
+footer {
+    text-align: right;
+    margin-right: 10%;
 }
 
